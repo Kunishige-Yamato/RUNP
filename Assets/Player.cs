@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //入力があったらジャンプ
         if(Input.anyKeyDown){
             player.GetComponent<Rigidbody>().useGravity=true;
             Vector3 speed;
