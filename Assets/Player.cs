@@ -30,6 +30,17 @@ public class Player : MonoBehaviour
             if(transform.position.y<=0.1){
                 jump=0;
             }
+        }  
+    }
+
+    //ぶつかったときの処理
+    void OnTriggerEnter(Collider col)
+    {
+        string tag=col.gameObject.tag;
+
+        //当たったのが障害物だったら
+        if(tag=="Enemy"){
+            Debug.Log("gameover");
         }
     }
 }
