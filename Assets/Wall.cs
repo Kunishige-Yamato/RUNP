@@ -8,11 +8,25 @@ public class Wall : MonoBehaviour
     public Vector3 pos;
     //壁の移動速度
     public float wallSpeed;
+    //スコアオブジェクトの取得
+    GameObject ScoreObj;
+    Score ScoreMain;
+    //加算用スコア変数
+    public int addScore;
+    //加算フラグ
+    public bool addFlag;
 
     void Start()
     {
         //壁の移動速度設定
         wallSpeed=(float)0.01;
+        //スコアオブジェクトの設定
+        ScoreObj=GameObject.Find("Score");
+        ScoreMain=ScoreObj.GetComponent<Score>();
+        //加算スコア設定
+        addScore=10;
+        //フラグ初期設定
+        addFlag=false;
     }
 
     void Update()
@@ -24,6 +38,11 @@ public class Wall : MonoBehaviour
         //一定数でデフォルトの位置にリスポーン
         if(transform.position.z<-5){
             Destroy(this.gameObject);
+        }
+        //Playerの後ろまで到達したら点数加算
+        if(transform.position.z<-1&&addFlag==false){
+            ScoreMain.score+=addScore;
+            addFlag=true;
         }
     }
 }
