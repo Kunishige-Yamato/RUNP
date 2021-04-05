@@ -11,6 +11,9 @@ public class Wall : MonoBehaviour
     //スコアオブジェクトの取得
     GameObject ScoreObj;
     Score ScoreMain;
+    //制御用オブジェクトの取得
+    GameObject ControlObj;
+    Progress ControlMain;
     //加算用スコア変数
     public int addScore;
     //加算フラグ
@@ -18,15 +21,18 @@ public class Wall : MonoBehaviour
 
     void Start()
     {
-        //壁の移動速度設定
-        wallSpeed=(float)0.01;
         //スコアオブジェクトの設定
         ScoreObj=GameObject.Find("Score");
         ScoreMain=ScoreObj.GetComponent<Score>();
+        //制御用オブジェクトの設定
+        ControlObj=GameObject.Find("GameObject");
+        ControlMain=ControlObj.GetComponent<Progress>();
         //加算スコア設定
         addScore=10;
         //フラグ初期設定
         addFlag=false;
+        //壁の移動速度設定
+        wallSpeed=(float)ControlMain.acceleration;
     }
 
     void Update()
