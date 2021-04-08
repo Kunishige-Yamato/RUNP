@@ -959,6 +959,10 @@ MonoBehaviour:
   timer2: 0
   ran: 0
   acceleration: 0
+  life: 0
+  canvas: {fileID: 1570558019}
+  heartPrefab: {fileID: 4823961580641303221, guid: 53e4f6d7776996f4ba07ae08ebce9ad7, type: 3}
+  heartPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1588208528
 Transform:
   m_ObjectHideFlags: 0
