@@ -6,10 +6,16 @@ public class Player : MonoBehaviour
 {
     public GameObject player;
     public int jump;
+    //制御用オブジェクトの取得
+    GameObject ControlObj;
+    Progress ControlMain;
 
     void Start()
     {
         jump=0;
+        //制御用オブジェクトの設定
+        ControlObj=GameObject.Find("GameObject");
+        ControlMain=ControlObj.GetComponent<Progress>();
     }
 
     void Update()
@@ -37,10 +43,9 @@ public class Player : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         string tag=col.gameObject.tag;
-
         //当たったのが障害物だったら
         if(tag=="Enemy"){
-            Debug.Log("gameover");
+            ControlMain.life--;
         }
     }
 }
