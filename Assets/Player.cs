@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
                 player.GetComponent<Rigidbody>().useGravity=true;
                 Vector3 speed;
                 speed.x=0;
-                speed.y=8;
+                speed.y=12;
                 speed.z=0;
                 player.GetComponent<Rigidbody>().AddForce(speed,ForceMode.Impulse);
             }

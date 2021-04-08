@@ -36,7 +36,7 @@ public class Progress : MonoBehaviour
             //壁生成
             GameObject wall=GameObject.Instantiate(wallPrefab);
         }
-        if(timer2%4000==0&&acceleration<=0.05){
+        if(timer2%4000==0&&acceleration<=0.04){
             acceleration*=(float)1.2;
         }
     }
